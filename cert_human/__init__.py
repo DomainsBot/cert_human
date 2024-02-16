@@ -35,7 +35,7 @@ ASN1_TYPE = OpenSSL.crypto.FILETYPE_ASN1
 
 HTTPSConnectionPool = urllib3.connectionpool.HTTPSConnectionPool
 ConnectionCls = HTTPSConnectionPool.ConnectionCls
-ResponseCls = HTTPSConnectionPool.ResponseCls
+ResponseCls = urllib3.response.HTTPResponse
 
 
 class HTTPSConnectionWithCertCls(ConnectionCls):  # noqa: D101
