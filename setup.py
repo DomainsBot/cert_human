@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 import os
 import sys
+from codecs import open
 from shutil import rmtree
 
-from codecs import open
-
-from setuptools import setup
-from setuptools import Command
+from setuptools import Command, setup
 from setuptools.command.test import test as TestCommand
 
 # from setuptools import find_packages
@@ -17,7 +15,6 @@ version_path = os.path.join(here, "cert_human", "__version__.py")
 
 
 class PyTest(TestCommand):
-
     # description = 'Run the test suite.'
     user_options = [("pytest-args=", "a", "Arguments to pass into py.test")]
 
@@ -68,7 +65,9 @@ class Upload(Command):
             pass
 
         self.status("Building Source and Wheel (universal) distribution…")
-        os.system("{0} setup.py sdist bdist_wheel --universal".format(sys.executable))
+        os.system(
+            "{0} setup.py sdist bdist_wheel --universal".format(sys.executable)
+        )
 
         self.status("Uploading the package to PyPI via Twine…")
         os.system("twine upload dist/*")
@@ -106,6 +105,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.10",
     install_requires=[
+        "asn1crypto==1.5.1",
         "pathlib2",
         "python_version<3.0",
         "requests[security]",
