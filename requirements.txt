@@ -1,3 +1,4 @@
 requests[security]
 pathlib2; python_version < '3.0'
 six>=1.12.0
+asn1crypto

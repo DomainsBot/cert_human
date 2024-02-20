@@ -3,6 +3,7 @@ pipenv
 pytest
 codecov
 pytest-httpbin
+werkzeug<2.1.0  # pytest-httpbin requires that
 pytest-mock
 pytest-cov
 pytest-xdist
