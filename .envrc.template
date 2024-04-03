@@ -1,0 +1,7 @@
+export PYTHONASYNCIODEBUG=1
+
+# Twine must use codeartifact as default.
+export TWINE_REPOSITORY=codeartifact
+
+# Enable slow contracts during development.
+export ICONTRACT_SLOW=x

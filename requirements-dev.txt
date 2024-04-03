@@ -15,4 +15,9 @@ flake8
 detox
 twine
 httpbin
-black; python_version >= '3.6'
+black
+
+coverage[toml]~=7.1
+invoke~=2.0
+mamba_runner==0.0.2
+mypy~=1.1
